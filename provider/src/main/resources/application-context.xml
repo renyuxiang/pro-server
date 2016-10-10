@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://code.alibabatech.com/schema/dubbo
+      http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<context:property-placeholder location="classpath:logback.properties"/>-->
+
+
+    <!--配置应用信息，用于服务提供方的描述-->
+    <!--<dubbo:application name="win_server"/>-->
+
+    <!--注册中心配置，用于服务注册-->
+    <!--<dubbo:registry protocol="zookeeper" address="192.168.100.165:2181,192.168.100.164:2181,192.168.100.163:2181"/>-->
+
+    <!--采用的协议，以及对应的处理容器的配置-->
+    <!--<dubbo:protocol name="dubbo" port="20880"/>-->
+
+    <!--抽象protocol和service中公共的部分，作为默认配置，不必要-->
+    <!--<dubbo:provider timeout="500000" retries="0" scope="remote"/>-->
+
+    <!--<bean id="user" class="cn.win.manage.vo.User">-->
+        <!--<constructor-arg name="id" value="1"/>-->
+        <!--<constructor-arg name="name" value="${loggingRoot}"/>-->
+        <!--<constructor-arg name="age" value="2"/>-->
+    <!--</bean>-->
+
+    <!--<import resource="application-context-manage.xml"/>-->
+</beans>
