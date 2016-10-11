@@ -7,8 +7,10 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <!-- 定义日志的根目录 -->
     <!--<property name="loggingRoot" value="/win" />-->
-    <property  file="src/main/resources/logback.properties" />
+    <!--<property  file="src/main/resources/logback.properties" />-->
     <!--<property file="classpath*:logback.properties"/>-->
+    <!--<property name="loggingRoot" value="D:/log" />-->
+    <!--<property name="loggingLevel" value="DEBUG" />-->
     <!--控制台-->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender" >
         <!-- encoder 默认配置为PatternLayoutEncoder -->
@@ -18,12 +20,12 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
     </appender>
 
     <!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份)-->
-    <appender name="win" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${loggingRoot}/win_server.log</file>
+    <appender name="pro" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${loggingRoot}/pro_server.log</file>
         <!--<file>/win/win_server.log</file>-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!--<fileNamePattern>/win/win-%d{yyyy-MM-dd}.log</fileNamePattern>-->
-            <fileNamePattern>${loggingRoot}/win-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${loggingRoot}/pro-%d{yyyy-MM-dd}.log</fileNamePattern>
             <!--<fileNamePattern>${user.dir}/craftsman/craftsman-%d{yyyy-MM-dd}.log</fileNamePattern>-->
             <maxHistory>30</maxHistory>
         </rollingPolicy>
@@ -35,9 +37,9 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
     </appender>
 
 
-    <logger name="cn.win" level="${loggingLevel}" additivity="false">
+    <logger name="com.ryx.server" level="${loggingLevel}" additivity="false">
         <appender-ref ref="STDOUT"/>
-        <appender-ref ref="win"/>
+        <appender-ref ref="pro"/>
     </logger>
 
 

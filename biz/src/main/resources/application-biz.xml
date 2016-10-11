@@ -8,10 +8,5 @@
       http://code.alibabatech.com/schema/dubbo
       http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <dubbo:service interface="cn.win.manage.service.Manage" ref="manageService"/>
-    <dubbo:service interface="cn.win.manage.service.Order" ref="orderService"/>
-
-
-    <bean id="manageService" class="cn.win.manage.service.impl.ManageImpl"/>
-    <bean id="orderService" class="cn.win.manage.service.impl.OrderImpl"/>
+    <import resource="application-dao.xml"/>
 </beans>
